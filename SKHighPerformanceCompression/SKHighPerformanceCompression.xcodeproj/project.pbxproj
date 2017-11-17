@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F98CE551FBEB4F400551365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE541FBEB4F400551365 /* AppDelegate.swift */; };
+		9F98CE571FBEB4F400551365 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE561FBEB4F400551365 /* ViewController.swift */; };
+		9F98CE591FBEB4F400551365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F98CE581FBEB4F400551365 /* Assets.xcassets */; };
+		9F98CE5C1FBEB4F400551365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F98CE5A1FBEB4F400551365 /* Main.storyboard */; };
+		9F98CE681FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE671FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift */; };
+		9F98CE731FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE721FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F98CE641FBEB4F400551365 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F98CE491FBEB4F400551365 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F98CE501FBEB4F400551365;
+			remoteInfo = SKHighPerformanceCompression;
+		};
+		9F98CE6F1FBEB4F400551365 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F98CE491FBEB4F400551365 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F98CE501FBEB4F400551365;
+			remoteInfo = SKHighPerformanceCompression;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9F98CE511FBEB4F400551365 /* SKHighPerformanceCompression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKHighPerformanceCompression.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F98CE541FBEB4F400551365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F98CE561FBEB4F400551365 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F98CE581FBEB4F400551365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F98CE5B1FBEB4F400551365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F98CE5D1FBEB4F400551365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F98CE5E1FBEB4F400551365 /* SKHighPerformanceCompression.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SKHighPerformanceCompression.entitlements; sourceTree = "<group>"; };
+		9F98CE631FBEB4F400551365 /* SKHighPerformanceCompressionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKHighPerformanceCompressionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F98CE671FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHighPerformanceCompressionTests.swift; sourceTree = "<group>"; };
+		9F98CE691FBEB4F400551365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F98CE6E1FBEB4F400551365 /* SKHighPerformanceCompressionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKHighPerformanceCompressionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F98CE721FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHighPerformanceCompressionUITests.swift; sourceTree = "<group>"; };
+		9F98CE741FBEB4F400551365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F98CE4E1FBEB4F400551365 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F98CE601FBEB4F400551365 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F98CE6B1FBEB4F400551365 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F98CE481FBEB4F400551365 = {
+			isa = PBXGroup;
+			children = (
+				9F98CE531FBEB4F400551365 /* SKHighPerformanceCompression */,
+				9F98CE661FBEB4F400551365 /* SKHighPerformanceCompressionTests */,
+				9F98CE711FBEB4F400551365 /* SKHighPerformanceCompressionUITests */,
+				9F98CE521FBEB4F400551365 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F98CE521FBEB4F400551365 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE511FBEB4F400551365 /* SKHighPerformanceCompression.app */,
+				9F98CE631FBEB4F400551365 /* SKHighPerformanceCompressionTests.xctest */,
+				9F98CE6E1FBEB4F400551365 /* SKHighPerformanceCompressionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F98CE531FBEB4F400551365 /* SKHighPerformanceCompression */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE541FBEB4F400551365 /* AppDelegate.swift */,
+				9F98CE561FBEB4F400551365 /* ViewController.swift */,
+				9F98CE581FBEB4F400551365 /* Assets.xcassets */,
+				9F98CE5A1FBEB4F400551365 /* Main.storyboard */,
+				9F98CE5D1FBEB4F400551365 /* Info.plist */,
+				9F98CE5E1FBEB4F400551365 /* SKHighPerformanceCompression.entitlements */,
+			);
+			path = SKHighPerformanceCompression;
+			sourceTree = "<group>";
+		};
+		9F98CE661FBEB4F400551365 /* SKHighPerformanceCompressionTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE671FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift */,
+				9F98CE691FBEB4F400551365 /* Info.plist */,
+			);
+			path = SKHighPerformanceCompressionTests;
+			sourceTree = "<group>";
+		};
+		9F98CE711FBEB4F400551365 /* SKHighPerformanceCompressionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE721FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift */,
+				9F98CE741FBEB4F400551365 /* Info.plist */,
+			);
+			path = SKHighPerformanceCompressionUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F98CE501FBEB4F400551365 /* SKHighPerformanceCompression */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F98CE771FBEB4F400551365 /* Build configuration list for PBXNativeTarget "SKHighPerformanceCompression" */;
+			buildPhases = (
+				9F98CE4D1FBEB4F400551365 /* Sources */,
+				9F98CE4E1FBEB4F400551365 /* Frameworks */,
+				9F98CE4F1FBEB4F400551365 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKHighPerformanceCompression;
+			productName = SKHighPerformanceCompression;
+			productReference = 9F98CE511FBEB4F400551365 /* SKHighPerformanceCompression.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F98CE621FBEB4F400551365 /* SKHighPerformanceCompressionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F98CE7A1FBEB4F400551365 /* Build configuration list for PBXNativeTarget "SKHighPerformanceCompressionTests" */;
+			buildPhases = (
+				9F98CE5F1FBEB4F400551365 /* Sources */,
+				9F98CE601FBEB4F400551365 /* Frameworks */,
+				9F98CE611FBEB4F400551365 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F98CE651FBEB4F400551365 /* PBXTargetDependency */,
+			);
+			name = SKHighPerformanceCompressionTests;
+			productName = SKHighPerformanceCompressionTests;
+			productReference = 9F98CE631FBEB4F400551365 /* SKHighPerformanceCompressionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9F98CE6D1FBEB4F400551365 /* SKHighPerformanceCompressionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F98CE7D1FBEB4F400551365 /* Build configuration list for PBXNativeTarget "SKHighPerformanceCompressionUITests" */;
+			buildPhases = (
+				9F98CE6A1FBEB4F400551365 /* Sources */,
+				9F98CE6B1FBEB4F400551365 /* Frameworks */,
+				9F98CE6C1FBEB4F400551365 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F98CE701FBEB4F400551365 /* PBXTargetDependency */,
+			);
+			name = SKHighPerformanceCompressionUITests;
+			productName = SKHighPerformanceCompressionUITests;
+			productReference = 9F98CE6E1FBEB4F400551365 /* SKHighPerformanceCompressionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F98CE491FBEB4F400551365 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = ShevaKuilin;
+				TargetAttributes = {
+					9F98CE501FBEB4F400551365 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					9F98CE621FBEB4F400551365 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9F98CE501FBEB4F400551365;
+					};
+					9F98CE6D1FBEB4F400551365 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9F98CE501FBEB4F400551365;
+					};
+				};
+			};
+			buildConfigurationList = 9F98CE4C1FBEB4F400551365 /* Build configuration list for PBXProject "SKHighPerformanceCompression" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F98CE481FBEB4F400551365;
+			productRefGroup = 9F98CE521FBEB4F400551365 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F98CE501FBEB4F400551365 /* SKHighPerformanceCompression */,
+				9F98CE621FBEB4F400551365 /* SKHighPerformanceCompressionTests */,
+				9F98CE6D1FBEB4F400551365 /* SKHighPerformanceCompressionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F98CE4F1FBEB4F400551365 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F98CE591FBEB4F400551365 /* Assets.xcassets in Resources */,
+				9F98CE5C1FBEB4F400551365 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F98CE611FBEB4F400551365 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F98CE6C1FBEB4F400551365 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F98CE4D1FBEB4F400551365 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F98CE571FBEB4F400551365 /* ViewController.swift in Sources */,
+				9F98CE551FBEB4F400551365 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F98CE5F1FBEB4F400551365 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F98CE681FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F98CE6A1FBEB4F400551365 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F98CE731FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F98CE651FBEB4F400551365 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F98CE501FBEB4F400551365 /* SKHighPerformanceCompression */;
+			targetProxy = 9F98CE641FBEB4F400551365 /* PBXContainerItemProxy */;
+		};
+		9F98CE701FBEB4F400551365 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F98CE501FBEB4F400551365 /* SKHighPerformanceCompression */;
+			targetProxy = 9F98CE6F1FBEB4F400551365 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9F98CE5A1FBEB4F400551365 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F98CE5B1FBEB4F400551365 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F98CE751FBEB4F400551365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F98CE761FBEB4F400551365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		9F98CE781FBEB4F400551365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SKHighPerformanceCompression/SKHighPerformanceCompression.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SKHighPerformanceCompression/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shevakuilin.SKHighPerformanceCompression;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		9F98CE791FBEB4F400551365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SKHighPerformanceCompression/SKHighPerformanceCompression.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SKHighPerformanceCompression/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shevakuilin.SKHighPerformanceCompression;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		9F98CE7B1FBEB4F400551365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SKHighPerformanceCompressionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shevakuilin.SKHighPerformanceCompressionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKHighPerformanceCompression.app/Contents/MacOS/SKHighPerformanceCompression";
+			};
+			name = Debug;
+		};
+		9F98CE7C1FBEB4F400551365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SKHighPerformanceCompressionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shevakuilin.SKHighPerformanceCompressionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKHighPerformanceCompression.app/Contents/MacOS/SKHighPerformanceCompression";
+			};
+			name = Release;
+		};
+		9F98CE7E1FBEB4F400551365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SKHighPerformanceCompressionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shevakuilin.SKHighPerformanceCompressionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = SKHighPerformanceCompression;
+			};
+			name = Debug;
+		};
+		9F98CE7F1FBEB4F400551365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SKHighPerformanceCompressionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shevakuilin.SKHighPerformanceCompressionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = SKHighPerformanceCompression;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F98CE4C1FBEB4F400551365 /* Build configuration list for PBXProject "SKHighPerformanceCompression" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F98CE751FBEB4F400551365 /* Debug */,
+				9F98CE761FBEB4F400551365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F98CE771FBEB4F400551365 /* Build configuration list for PBXNativeTarget "SKHighPerformanceCompression" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F98CE781FBEB4F400551365 /* Debug */,
+				9F98CE791FBEB4F400551365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F98CE7A1FBEB4F400551365 /* Build configuration list for PBXNativeTarget "SKHighPerformanceCompressionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F98CE7B1FBEB4F400551365 /* Debug */,
+				9F98CE7C1FBEB4F400551365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F98CE7D1FBEB4F400551365 /* Build configuration list for PBXNativeTarget "SKHighPerformanceCompressionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F98CE7E1FBEB4F400551365 /* Debug */,
+				9F98CE7F1FBEB4F400551365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F98CE491FBEB4F400551365 /* Project object */;
+}
