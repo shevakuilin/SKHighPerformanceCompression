@@ -745,14 +745,26 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0VA-sl-BaB">
+                                        <rect key="frame" x="36" y="54" width="528" height="351"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="528" id="S4S-Wz-LeB"/>
+                                            <constraint firstAttribute="height" constant="351" id="o7A-ob-E08"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="animationIn+hover+relax_00039" id="1ld-ov-ghl"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="76R-E9-DJA" firstAttribute="centerX" secondItem="dfD-2k-n6z" secondAttribute="centerX" id="0rk-8r-2wJ"/>
                                     <constraint firstItem="aI1-3H-Jl6" firstAttribute="centerX" secondItem="dfD-2k-n6z" secondAttribute="centerX" id="1Bj-bk-ksg"/>
                                     <constraint firstItem="25h-wA-hBa" firstAttribute="leading" secondItem="dfD-2k-n6z" secondAttribute="leading" constant="10" id="3xP-Ky-qcC"/>
+                                    <constraint firstItem="0VA-sl-BaB" firstAttribute="centerX" secondItem="dfD-2k-n6z" secondAttribute="centerX" constant="18" id="7uo-ad-hVg"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="564" id="LAH-6L-w8Y"/>
                                     <constraint firstAttribute="bottom" secondItem="aI1-3H-Jl6" secondAttribute="bottom" constant="20" id="SfR-pu-BoO"/>
+                                    <constraint firstItem="0VA-sl-BaB" firstAttribute="top" secondItem="dfD-2k-n6z" secondAttribute="top" id="X91-gV-m13"/>
+                                    <constraint firstItem="0VA-sl-BaB" firstAttribute="leading" secondItem="dfD-2k-n6z" secondAttribute="leading" constant="36" id="cbS-J3-78X"/>
                                     <constraint firstAttribute="bottom" secondItem="25h-wA-hBa" secondAttribute="bottom" constant="11" id="csP-ls-G3N"/>
+                                    <constraint firstItem="25h-wA-hBa" firstAttribute="top" secondItem="0VA-sl-BaB" secondAttribute="bottom" constant="8" id="hqH-M2-roH"/>
                                     <constraint firstItem="76R-E9-DJA" firstAttribute="top" secondItem="dfD-2k-n6z" secondAttribute="top" constant="5" id="nHY-BX-tcN"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="380" id="rbG-WG-DlF"/>
                                 </constraints>
@@ -765,6 +777,12 @@
                             <constraint firstAttribute="bottom" secondItem="dfD-2k-n6z" secondAttribute="bottom" id="xZY-1r-gHU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animationImageView" destination="0VA-sl-BaB" id="zjR-S0-chi"/>
+                        <outlet property="applicationTitleLabel" destination="76R-E9-DJA" id="eAw-YH-Y1W"/>
+                        <outlet property="reminderInfoLabel" destination="aI1-3H-Jl6" id="5wL-gE-Z0E"/>
+                        <outlet property="settingButton" destination="25h-wA-hBa" id="PKa-MO-Dlu"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -774,5 +792,6 @@
     <resources>
         <image name="Settings" width="32" height="32"/>
         <image name="SettingsDown" width="32" height="32"/>
+        <image name="animationIn+hover+relax_00039" width="535" height="266"/>
     </resources>
 </document>
