@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9F98CE551FBEB4F400551365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE541FBEB4F400551365 /* AppDelegate.swift */; };
-		9F98CE571FBEB4F400551365 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE561FBEB4F400551365 /* ViewController.swift */; };
 		9F98CE591FBEB4F400551365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F98CE581FBEB4F400551365 /* Assets.xcassets */; };
 		9F98CE5C1FBEB4F400551365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F98CE5A1FBEB4F400551365 /* Main.storyboard */; };
 		9F98CE681FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE671FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift */; };
 		9F98CE731FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE721FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift */; };
+		9F98CE871FBEBBE100551365 /* SKMainInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE861FBEBBE100551365 /* SKMainInterfaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 /* Begin PBXFileReference section */
 		9F98CE511FBEB4F400551365 /* SKHighPerformanceCompression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKHighPerformanceCompression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F98CE541FBEB4F400551365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F98CE561FBEB4F400551365 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F98CE581FBEB4F400551365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F98CE5B1FBEB4F400551365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F98CE5D1FBEB4F400551365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		9F98CE6E1FBEB4F400551365 /* SKHighPerformanceCompressionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKHighPerformanceCompressionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F98CE721FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHighPerformanceCompressionUITests.swift; sourceTree = "<group>"; };
 		9F98CE741FBEB4F400551365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F98CE861FBEBBE100551365 /* SKMainInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKMainInterfaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +96,12 @@
 		9F98CE531FBEB4F400551365 /* SKHighPerformanceCompression */ = {
 			isa = PBXGroup;
 			children = (
-				9F98CE541FBEB4F400551365 /* AppDelegate.swift */,
-				9F98CE561FBEB4F400551365 /* ViewController.swift */,
-				9F98CE581FBEB4F400551365 /* Assets.xcassets */,
-				9F98CE5A1FBEB4F400551365 /* Main.storyboard */,
-				9F98CE5D1FBEB4F400551365 /* Info.plist */,
-				9F98CE5E1FBEB4F400551365 /* SKHighPerformanceCompression.entitlements */,
+				9F98CE851FBEBB8C00551365 /* Basics */,
+				9F98CE811FBEB9D700551365 /* MainInterface */,
+				9F98CE801FBEB9CB00551365 /* Setting */,
+				9F98CE821FBEBB2500551365 /* Stroyboard */,
+				9F98CE831FBEBB4300551365 /* Resource */,
+				9F98CE841FBEBB5100551365 /* Config */,
 			);
 			path = SKHighPerformanceCompression;
 			sourceTree = "<group>";
@@ -122,6 +122,54 @@
 				9F98CE741FBEB4F400551365 /* Info.plist */,
 			);
 			path = SKHighPerformanceCompressionUITests;
+			sourceTree = "<group>";
+		};
+		9F98CE801FBEB9CB00551365 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		9F98CE811FBEB9D700551365 /* MainInterface */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE861FBEBBE100551365 /* SKMainInterfaceViewController.swift */,
+			);
+			path = MainInterface;
+			sourceTree = "<group>";
+		};
+		9F98CE821FBEBB2500551365 /* Stroyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE5A1FBEB4F400551365 /* Main.storyboard */,
+			);
+			path = Stroyboard;
+			sourceTree = "<group>";
+		};
+		9F98CE831FBEBB4300551365 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE581FBEB4F400551365 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9F98CE841FBEBB5100551365 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE5D1FBEB4F400551365 /* Info.plist */,
+				9F98CE5E1FBEB4F400551365 /* SKHighPerformanceCompression.entitlements */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		9F98CE851FBEBB8C00551365 /* Basics */ = {
+			isa = PBXGroup;
+			children = (
+				9F98CE541FBEB4F400551365 /* AppDelegate.swift */,
+			);
+			path = Basics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +234,7 @@
 		9F98CE491FBEB4F400551365 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SK;
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = ShevaKuilin;
@@ -257,8 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F98CE571FBEB4F400551365 /* ViewController.swift in Sources */,
 				9F98CE551FBEB4F400551365 /* AppDelegate.swift in Sources */,
+				9F98CE871FBEBBE100551365 /* SKMainInterfaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,10 +464,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SKHighPerformanceCompression/SKHighPerformanceCompression.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SKHighPerformanceCompression/Config/SKHighPerformanceCompression.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SKHighPerformanceCompression/Info.plist;
+				INFOPLIST_FILE = SKHighPerformanceCompression/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shevakuilin.SKHighPerformanceCompression;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,10 +479,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SKHighPerformanceCompression/SKHighPerformanceCompression.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SKHighPerformanceCompression/Config/SKHighPerformanceCompression.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SKHighPerformanceCompression/Info.plist;
+				INFOPLIST_FILE = SKHighPerformanceCompression/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shevakuilin.SKHighPerformanceCompression;
 				PRODUCT_NAME = "$(TARGET_NAME)";
