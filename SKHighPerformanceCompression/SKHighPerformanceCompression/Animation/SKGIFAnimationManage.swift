@@ -12,8 +12,8 @@ private let manage = SKGIFAnimationManage()
 
 class SKGIFAnimationManage: NSObject {
     private var _timer:DispatchSourceTimer?
-    private let defaultGIFPrefix = "Hover+compress+gift+relax_"
-    private let decompressionGIFPrefix = "animationIn+hover+relax_"
+    private let decompressionGIFPrefix = "Hover+compress+gift+relax_"
+    private let defaultGIFPrefix = "animationIn+hover+relax_"
     
     // Create a single instance
     class func sharedInstance() -> SKGIFAnimationManage {
@@ -34,7 +34,7 @@ class SKGIFAnimationManage: NSObject {
         var pictureFrames:Array<NSImage> = []
         var picturePrefix = ""
         if isDecompression {
-            picturePrefix = defaultGIFPrefix
+            picturePrefix = decompressionGIFPrefix
             for i in 44..<172 {
                 let pictureSuffix = i < 100 ? "000" + "\(i)" : "00" + "\(i)"
                 let pictureFull = picturePrefix + pictureSuffix
@@ -42,7 +42,7 @@ class SKGIFAnimationManage: NSObject {
                 pictureFrames.append(image!)
             }
         } else {
-            picturePrefix = decompressionGIFPrefix
+            picturePrefix = defaultGIFPrefix
             for i in 15..<94 {
                 let pictureSuffix = "000" + "\(i)"
                 let pictureFull = picturePrefix + pictureSuffix
@@ -50,11 +50,15 @@ class SKGIFAnimationManage: NSObject {
                 pictureFrames.append(image!)
             }
         }
-        makeGIFAnimation(images: pictureFrames, imageView: imageView)
+        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:isDecompression)
     }
     
     // Making GIF animation effects
-    private func makeGIFAnimation(images:Array<NSImage>, imageView:NSImageView) {
+    private func makeGIFAnimation(images:Array<NSImage>, imageView:NSImageView, isDecompression:Bool) {
+        weak var weakSelf = self
+        guard let wSelf = weakSelf else {
+            return
+        }
         var index:Int = 0
         let period:TimeInterval = 0.1
         let queue = DispatchQueue.global(qos: .default)
@@ -69,6 +73,12 @@ class SKGIFAnimationManage: NSObject {
                 let image:NSImage = images[index]
                 DispatchQueue.main.async {
                     imageView.image = image
+                    if isDecompression == false {
+                        if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00092" {
+                            print("默认帧图走到最后一位了!!!")
+                            _timer.cancel()
+                        }
+                    }
                 }
                 
                 index += 1
