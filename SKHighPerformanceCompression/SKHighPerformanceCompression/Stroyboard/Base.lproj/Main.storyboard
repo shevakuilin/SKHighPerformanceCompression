@@ -729,7 +729,7 @@
                                             <constraint firstAttribute="height" constant="17" id="PBy-IU-MNM"/>
                                         </constraints>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="SKHighPerformanceCompression" id="Xn7-xg-5ut">
-                                            <font key="font" metaFont="system" size="12"/>
+                                            <font key="font" metaFont="cellTitle"/>
                                             <color key="textColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>

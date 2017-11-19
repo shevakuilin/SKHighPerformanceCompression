@@ -18,6 +18,8 @@ class SKMainInterfaceViewController: NSViewController {
     @IBOutlet weak var applicationTitleLabel: NSTextField!
     @IBOutlet weak var animationImageView: NSImageView!
     
+    private var animationManage = SKGIFAnimationManage.sharedInstance()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
@@ -28,6 +30,9 @@ class SKMainInterfaceViewController: NSViewController {
         setBasicsInteractionAction()
     }
     
+    override func mouseDown(with event: NSEvent) {
+        animationManage.stopGIFAnimation()
+    }
 }
 
 extension SKMainInterfaceViewController {
@@ -37,48 +42,10 @@ extension SKMainInterfaceViewController {
         self.view.wantsLayer = true // Open the layer draw
         self.view.layer?.backgroundColor = NSColor(red: 52/255.0, green: 52/255.0, blue: 52/255.0, alpha: 1.0).cgColor
         
-        // Read animation pictures
-        var pictureFrames:Array<NSImage> = []
-        let picturePrefix = "Hover+compress+gift+relax_"
-        for i in 44..<172 {
-            let pictureSuffix = i < 100 ? "000" + "\(i)" : "00" + "\(i)"
-            let pictureFull = picturePrefix + pictureSuffix
-            let image = NSImage.init(named: NSImage.Name(rawValue: pictureFull))
-            pictureFrames.append(image!)
-        }
-        
-        // TODO: Testing GIF animation
-        makeGIFAnimation(images: pictureFrames)
+        // Setting default animation
+        animationManage.startGIFAnimation(imageView: animationImageView, isDecompression: true)
     }
-    
-    // Making GIF animation effects
-    private func makeGIFAnimation(images:Array<NSImage>) {
-        weak var weakSelf = self
-        guard let wSelf = weakSelf else {
-            return
-        }
-        var index:Int = 0
-        let period:TimeInterval = 0.1
-        let queue = DispatchQueue.global(qos: .default)
-        let _timer = DispatchSource.makeTimerSource(flags: [], queue: queue)
-        _timer.schedule(deadline: .now() + period, repeating: period)
-        _timer.setEventHandler {
-            if images.count == 0 {
-                _timer.cancel()
-                return
-            }
-            let image:NSImage = images[index]
-            DispatchQueue.main.async {
-                wSelf.animationImageView.image = image
-            }
-            
-            index += 1
-            if index == images.count - 1 {
-                index = 0
-            }
-        }
-        _timer.resume()
-    }
+
 }
 
 extension SKMainInterfaceViewController {

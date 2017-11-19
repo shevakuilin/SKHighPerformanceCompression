@@ -13,6 +13,7 @@
 		9F98CE681FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE671FBEB4F400551365 /* SKHighPerformanceCompressionTests.swift */; };
 		9F98CE731FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE721FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift */; };
 		9F98CE871FBEBBE100551365 /* SKMainInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE861FBEBBE100551365 /* SKMainInterfaceViewController.swift */; };
+		9FCD84D01FC166E9006E6776 /* SKGIFAnimationManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD84CF1FC166E9006E6776 /* SKGIFAnimationManage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		9F98CE721FBEB4F400551365 /* SKHighPerformanceCompressionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHighPerformanceCompressionUITests.swift; sourceTree = "<group>"; };
 		9F98CE741FBEB4F400551365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F98CE861FBEBBE100551365 /* SKMainInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKMainInterfaceViewController.swift; sourceTree = "<group>"; };
+		9FCD84CF1FC166E9006E6776 /* SKGIFAnimationManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKGIFAnimationManage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		9F98CE531FBEB4F400551365 /* SKHighPerformanceCompression */ = {
 			isa = PBXGroup;
 			children = (
+				9FCD84CE1FC16681006E6776 /* Animation */,
 				9F98CE851FBEBB8C00551365 /* Basics */,
 				9F98CE811FBEB9D700551365 /* MainInterface */,
 				9F98CE801FBEB9CB00551365 /* Setting */,
@@ -170,6 +173,14 @@
 				9F98CE541FBEB4F400551365 /* AppDelegate.swift */,
 			);
 			path = Basics;
+			sourceTree = "<group>";
+		};
+		9FCD84CE1FC16681006E6776 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				9FCD84CF1FC166E9006E6776 /* SKGIFAnimationManage.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F98CE551FBEB4F400551365 /* AppDelegate.swift in Sources */,
+				9FCD84D01FC166E9006E6776 /* SKGIFAnimationManage.swift in Sources */,
 				9F98CE871FBEBBE100551365 /* SKMainInterfaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
