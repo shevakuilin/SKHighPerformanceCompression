@@ -100,15 +100,20 @@ class SKGIFAnimationManage: NSObject {
                 DispatchQueue.main.async {
                     imageView.image = image
                     if isDecompression == false {
-                        if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00092" {
-                            print("默认帧图走到最后一位了!!!")
+                        if index == 0 {
                             wSelf.stopGIFAnimation()
                         }
+//                        if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00092" {
+//                            print("默认帧图走到最后一位了!!!")
+//                        }
                     } else {
-                        if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00082" {
-                            print("默认帧图走到最后一位了!!!")
+                        if index == 0 {
                             wSelf.stopGIFAnimation()
                         }
+//                        if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00082" {
+//                            print("默认帧图走到最后一位了!!!")
+//                            wSelf.stopGIFAnimation()
+//                        }
                     }
                 }
                 
