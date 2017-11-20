@@ -38,6 +38,7 @@ extension SKDraftingImageView {
         isDragIn = true
         // TODO: add GIF animation
         print("继承imageView开始拖动进入")
+        animationManage.stopGIFAnimation()
         animationManage.readyToStartCompressionGIFAnimation(imageView: self)
 
         return NSDragOperation.copy
@@ -47,6 +48,7 @@ extension SKDraftingImageView {
         isDragIn = false
         // TODO: add GIF animation
         print("继承imageView开始拖动离开")
+        animationManage.stopGIFAnimation()
         animationManage.cancelCompressionGIFAnimation(imageView: self)
     }
     

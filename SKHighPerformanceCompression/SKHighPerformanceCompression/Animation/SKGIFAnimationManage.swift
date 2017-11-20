@@ -76,7 +76,7 @@ class SKGIFAnimationManage: NSObject {
             let image = NSImage.init(named: NSImage.Name(rawValue: pictureFull))
             pictureFrames.append(image!)
         }
-        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:true)
+        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:false)
     }
     
     // Making GIF animation effects
