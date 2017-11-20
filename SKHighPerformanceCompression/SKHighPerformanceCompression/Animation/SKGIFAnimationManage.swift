@@ -14,6 +14,7 @@ class SKGIFAnimationManage: NSObject {
     private var _timer:DispatchSourceTimer?
     private let decompressionGIFPrefix = "Hover+compress+gift+relax_"
     private let defaultGIFPrefix = "animationIn+hover+relax_"
+    private var isCancle:Bool = false
     
     // Create a single instance
     class func sharedInstance() -> SKGIFAnimationManage {
@@ -29,7 +30,9 @@ class SKGIFAnimationManage: NSObject {
     
     // Display animation according to status
     public func startGIFAnimation(imageView:NSImageView, isDecompression:Bool) {
-        
+        if isCancle {
+            isCancle = false
+        }
         // Read animation pictures
         var pictureFrames:Array<NSImage> = []
         var picturePrefix = ""
@@ -43,38 +46,51 @@ class SKGIFAnimationManage: NSObject {
             }
         } else {
             picturePrefix = defaultGIFPrefix
-            for i in 15..<94 {
+            for i in 15..<53 {
                 let pictureSuffix = "000" + "\(i)"
                 let pictureFull = picturePrefix + pictureSuffix
                 let image = NSImage.init(named: NSImage.Name(rawValue: pictureFull))
                 pictureFrames.append(image!)
             }
         }
+        if _timer != nil {
+            _timer?.cancel()
+        }
         makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:isDecompression)
     }
     
     // Ready to start compression
     public func readyToStartCompressionGIFAnimation(imageView:NSImageView) {
+        if isCancle {
+            isCancle = false
+        }
         var pictureFrames:Array<NSImage> = []
         let picturePrefix = defaultGIFPrefix
-        for i in 50..<83 {
+        for i in 50..<82 {
             let pictureSuffix = "000" + "\(i)"
             let pictureFull = picturePrefix + pictureSuffix
             let image = NSImage.init(named: NSImage.Name(rawValue: pictureFull))
             pictureFrames.append(image!)
+        }
+        if _timer != nil {
+            _timer?.cancel()
         }
         makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:true)
     }
     
     // Cancel compression
     public func cancelCompressionGIFAnimation(imageView:NSImageView) {
+        isCancle = true
         var pictureFrames:Array<NSImage> = []
         let picturePrefix = defaultGIFPrefix
-        for i in (50..<83).reversed() {
+        for i in (50..<61).reversed() {
             let pictureSuffix = "000" + "\(i)"
             let pictureFull = picturePrefix + pictureSuffix
             let image = NSImage.init(named: NSImage.Name(rawValue: pictureFull))
             pictureFrames.append(image!)
+        }
+        if _timer != nil {
+            _timer?.cancel()
         }
         makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:false)
     }
@@ -85,12 +101,13 @@ class SKGIFAnimationManage: NSObject {
         guard let wSelf = weakSelf else {
             return
         }
+
         var index:Int = 0
         let period:TimeInterval = 0.1
         let queue = DispatchQueue.global(qos: .default)
         _timer = DispatchSource.makeTimerSource(flags: [], queue: queue)
         if let _timer = _timer {
-            _timer.schedule(deadline: .now() + period, repeating: 0.05)
+            _timer.schedule(deadline: .now() + period, repeating: isCancle ? 0.077 : 0.04)
             _timer.setEventHandler {
                 if images.count == 0 {
                     _timer.cancel()
@@ -102,18 +119,14 @@ class SKGIFAnimationManage: NSObject {
                     if isDecompression == false {
                         if index == 0 {
                             wSelf.stopGIFAnimation()
+                            print("The last default frame diagram is:" + "\(image.name()!.rawValue)")
                         }
-//                        if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00092" {
-//                            print("默认帧图走到最后一位了!!!")
-//                        }
+
                     } else {
                         if index == 0 {
                             wSelf.stopGIFAnimation()
+                            print("The last bit of the compressed frame graph is:" + "\(image.name()!.rawValue)")
                         }
-//                        if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00082" {
-//                            print("默认帧图走到最后一位了!!!")
-//                            wSelf.stopGIFAnimation()
-//                        }
                     }
                 }
                 

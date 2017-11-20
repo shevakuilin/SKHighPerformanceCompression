@@ -31,15 +31,6 @@ class SKMainInterfaceViewController: NSViewController {
         super.viewDidAppear()
         setBasicsInteractionAction()
     }
-    
-    
-//    override func mouseEntered(with event: NSEvent) {
-//        animationManage.readyToStartCompressionGIFAnimation(imageView: animationImageView)
-//    }
-//
-//    override func mouseExited(with event: NSEvent) {
-//        animationManage.stopGIFAnimation()
-//    }
 }
 
 extension SKMainInterfaceViewController {
