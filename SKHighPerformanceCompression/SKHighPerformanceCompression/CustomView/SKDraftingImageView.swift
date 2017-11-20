@@ -37,7 +37,7 @@ extension SKDraftingImageView {
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         isDragIn = true
         // TODO: add GIF animation
-        print("继承imageView开始拖动进入")
+        print("The file begins dragging in")
         animationManage.readyToStartCompressionGIFAnimation(imageView: self)
 
         return NSDragOperation.copy
@@ -46,7 +46,7 @@ extension SKDraftingImageView {
     override func draggingExited(_ sender: NSDraggingInfo?) {
         isDragIn = false
         // TODO: add GIF animation
-        print("继承imageView开始拖动离开")
+        print("The file starts dragging away")
         animationManage.cancelCompressionGIFAnimation(imageView: self)
     }
     

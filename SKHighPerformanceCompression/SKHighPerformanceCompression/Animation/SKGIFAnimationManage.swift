@@ -83,7 +83,7 @@ class SKGIFAnimationManage: NSObject {
         isCancle = true
         var pictureFrames:Array<NSImage> = []
         let picturePrefix = defaultGIFPrefix
-        for i in (50..<61).reversed() {
+        for i in (52..<59).reversed() {
             let pictureSuffix = "000" + "\(i)"
             let pictureFull = picturePrefix + pictureSuffix
             let image = NSImage.init(named: NSImage.Name(rawValue: pictureFull))
@@ -107,7 +107,7 @@ class SKGIFAnimationManage: NSObject {
         let queue = DispatchQueue.global(qos: .default)
         _timer = DispatchSource.makeTimerSource(flags: [], queue: queue)
         if let _timer = _timer {
-            _timer.schedule(deadline: .now() + period, repeating: isCancle ? 0.077 : 0.04)
+            _timer.schedule(deadline: .now() + period, repeating: isCancle ? 0.97 : 0.04)
             _timer.setEventHandler {
                 if images.count == 0 {
                     _timer.cancel()
