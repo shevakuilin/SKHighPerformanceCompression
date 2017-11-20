@@ -16,13 +16,15 @@ class SKMainInterfaceViewController: NSViewController {
     @IBOutlet weak var settingButton: NSButton!
     @IBOutlet weak var reminderInfoLabel: NSTextField!
     @IBOutlet weak var applicationTitleLabel: NSTextField!
-    @IBOutlet weak var animationImageView: NSImageView!
+    @IBOutlet weak var animationImageView: SKDraftingImageView!
+    @IBOutlet weak var maskView: NSView!
     
     private var animationManage = SKGIFAnimationManage.sharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
+        setMouseAction()
     }
     
     override func viewDidAppear() {
@@ -30,9 +32,14 @@ class SKMainInterfaceViewController: NSViewController {
         setBasicsInteractionAction()
     }
     
-    override func mouseDown(with event: NSEvent) {
-        animationManage.stopGIFAnimation()
-    }
+    
+//    override func mouseEntered(with event: NSEvent) {
+//        animationManage.readyToStartCompressionGIFAnimation(imageView: animationImageView)
+//    }
+//
+//    override func mouseExited(with event: NSEvent) {
+//        animationManage.stopGIFAnimation()
+//    }
 }
 
 extension SKMainInterfaceViewController {
@@ -44,6 +51,12 @@ extension SKMainInterfaceViewController {
         
         // Setting default animation
         animationManage.startGIFAnimation(imageView: animationImageView, isDecompression: false)
+    }
+    
+    // MARK: Setting mouse related events
+    private func setMouseAction() {
+        let area:NSTrackingArea = NSTrackingArea.init(rect: self.maskView.bounds, options: [.mouseEnteredAndExited, .activeInKeyWindow], owner: self, userInfo: nil)
+        self.maskView.addTrackingArea(area)
     }
 
 }

@@ -745,7 +745,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0VA-sl-BaB">
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0VA-sl-BaB" customClass="SKDraftingImageView" customModule="SKHighPerformanceCompression" customModuleProvider="target">
                                         <rect key="frame" x="36" y="54" width="528" height="351"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="528" id="S4S-Wz-LeB"/>
@@ -780,6 +780,7 @@
                     <connections>
                         <outlet property="animationImageView" destination="0VA-sl-BaB" id="zjR-S0-chi"/>
                         <outlet property="applicationTitleLabel" destination="76R-E9-DJA" id="eAw-YH-Y1W"/>
+                        <outlet property="maskView" destination="dfD-2k-n6z" id="0Vc-ys-eqV"/>
                         <outlet property="reminderInfoLabel" destination="aI1-3H-Jl6" id="5wL-gE-Z0E"/>
                         <outlet property="settingButton" destination="25h-wA-hBa" id="PKa-MO-Dlu"/>
                     </connections>

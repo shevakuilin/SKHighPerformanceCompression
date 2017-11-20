@@ -53,6 +53,32 @@ class SKGIFAnimationManage: NSObject {
         makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:isDecompression)
     }
     
+    // Ready to start compression
+    public func readyToStartCompressionGIFAnimation(imageView:NSImageView) {
+        var pictureFrames:Array<NSImage> = []
+        let picturePrefix = defaultGIFPrefix
+        for i in 50..<83 {
+            let pictureSuffix = "000" + "\(i)"
+            let pictureFull = picturePrefix + pictureSuffix
+            let image = NSImage.init(named: NSImage.Name(rawValue: pictureFull))
+            pictureFrames.append(image!)
+        }
+        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:true)
+    }
+    
+    // Cancel compression
+    public func cancelCompressionGIFAnimation(imageView:NSImageView) {
+        var pictureFrames:Array<NSImage> = []
+        let picturePrefix = defaultGIFPrefix
+        for i in (50..<83).reversed() {
+            let pictureSuffix = "000" + "\(i)"
+            let pictureFull = picturePrefix + pictureSuffix
+            let image = NSImage.init(named: NSImage.Name(rawValue: pictureFull))
+            pictureFrames.append(image!)
+        }
+        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:true)
+    }
+    
     // Making GIF animation effects
     private func makeGIFAnimation(images:Array<NSImage>, imageView:NSImageView, isDecompression:Bool) {
         weak var weakSelf = self
@@ -76,7 +102,12 @@ class SKGIFAnimationManage: NSObject {
                     if isDecompression == false {
                         if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00092" {
                             print("默认帧图走到最后一位了!!!")
-                            _timer.cancel()
+                            wSelf.stopGIFAnimation()
+                        }
+                    } else {
+                        if image.name()!.rawValue == wSelf.defaultGIFPrefix + "00082" {
+                            print("默认帧图走到最后一位了!!!")
+                            wSelf.stopGIFAnimation()
                         }
                     }
                 }
