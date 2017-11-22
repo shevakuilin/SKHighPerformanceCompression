@@ -40,6 +40,7 @@ extension SKDraftingImageView {
         isDragIn = true
         // TODO: add GIF animation
         printLog("The file begins dragging in")
+        animationManage.stopGIFAnimation()
         animationManage.readyToStartCompressionGIFAnimation(imageView: self)
 
         return NSDragOperation.copy
@@ -49,6 +50,7 @@ extension SKDraftingImageView {
         isDragIn = false
         // TODO: add GIF animation
         print("The file starts dragging away")
+        animationManage.stopGIFAnimation()
         animationManage.cancelCompressionGIFAnimation(imageView: self)
     }
     
@@ -59,9 +61,13 @@ extension SKDraftingImageView {
     }
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        if sender.draggingSource() != self as AnyObject as! _OptionalNilComparisonType {
-//            let filePaths = sender.draggingPasteboard().propertyList(forType: NSPasteboard.PasteboardType("NSFilenamesPboardType"))
-            
+        let pboard = sender.draggingPasteboard()
+        if let types = pboard.types {
+            if types.contains(NSPasteboard.PasteboardType("NSFilenamesPboardType")) {
+                animationManage.stopGIFAnimation()
+                animationManage.startGIFAnimation(imageView: self, isDecompression: true)
+                printLog("Start to compress...")
+            }
         }
         
         return true
