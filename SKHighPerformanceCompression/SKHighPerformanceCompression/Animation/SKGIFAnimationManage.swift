@@ -2,6 +2,8 @@
 //  SKGIFAnimationManage.swift
 //  SKHighPerformanceCompression
 //
+//  [SK:] This includes the handling of all animation events
+//
 //  Created by ShevaKuilin on 2017/11/19.
 //  Copyright © 2017年 ShevaKuilin. All rights reserved.
 //
@@ -119,13 +121,13 @@ class SKGIFAnimationManage: NSObject {
                     if isDecompression == false {
                         if index == 0 {
                             wSelf.stopGIFAnimation()
-                            print("The last default frame diagram is:" + "\(image.name()!.rawValue)")
+                            printLog("The last default frame diagram is:" + "\(image.name()!.rawValue)")
                         }
 
                     } else {
                         if index == 0 {
                             wSelf.stopGIFAnimation()
-                            print("The last bit of the compressed frame graph is:" + "\(image.name()!.rawValue)")
+                            printLog("The last bit of the compressed frame graph is:" + "\(image.name()!.rawValue)")
                         }
                     }
                 }

@@ -2,6 +2,8 @@
 //  SKDraftingImageView.swift
 //  SKHighPerformanceCompression
 //
+//  [SK:] This is a custom control that inherits from NSImageView to respond to mouse drag and drop files
+//
 //  Created by ShevaKuilin on 2017/11/20.
 //  Copyright © 2017年 ShevaKuilin. All rights reserved.
 //
@@ -37,7 +39,7 @@ extension SKDraftingImageView {
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         isDragIn = true
         // TODO: add GIF animation
-        print("The file begins dragging in")
+        printLog("The file begins dragging in")
         animationManage.readyToStartCompressionGIFAnimation(imageView: self)
 
         return NSDragOperation.copy
