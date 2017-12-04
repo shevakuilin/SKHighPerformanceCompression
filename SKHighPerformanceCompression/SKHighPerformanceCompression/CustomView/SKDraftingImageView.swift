@@ -41,7 +41,9 @@ extension SKDraftingImageView {
         // TODO: add GIF animation
         printLog("The file begins dragging in")
         animationManage.stopGIFAnimation()
-        animationManage.readyToStartCompressionGIFAnimation(imageView: self)
+        animationManage.readyToStartCompressionGIFAnimation(imageView: self, completion: {() in
+            
+        })
 
         return NSDragOperation.copy
     }
@@ -51,25 +53,93 @@ extension SKDraftingImageView {
         // TODO: add GIF animation
         print("The file starts dragging away")
         animationManage.stopGIFAnimation()
-        animationManage.cancelCompressionGIFAnimation(imageView: self)
+        animationManage.cancelCompressionGIFAnimation(imageView: self, completion: {() in
+            
+        })
     }
     
     override func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
         isDragIn = false
+        printLog("Dragging end!!")
+        
         
         return true
     }
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        let pboard = sender.draggingPasteboard()
-        if let types = pboard.types {
+        let pBoard = sender.draggingPasteboard()
+        if let types = pBoard.types {
             if types.contains(NSPasteboard.PasteboardType("NSFilenamesPboardType")) {
+                weak var weakSelf = self
+                guard let wSelf = weakSelf else {
+                    return false
+                }
                 animationManage.stopGIFAnimation()
-                animationManage.startGIFAnimation(imageView: self, isDecompression: true)
+                animationManage.startGIFAnimation(imageView: self, isDecompression: true, completion: {() in
+                    printLog("compress is completion !!")
+                    let canRead = pBoard.canReadObject(forClasses: [NSImage.classForCoder()], options: Dictionary())
+                    if canRead {
+                        let boardArr = pBoard.readObjects(forClasses: [NSImage.classForCoder()], options: Dictionary())
+                        if let image:NSImage = boardArr?.first as? NSImage {
+                            wSelf.creatImagesFileFolder(images: [image])
+                        }
+                    }
+                })
                 printLog("Start to compress...")
             }
         }
         
         return true
+    }
+    
+    // MARK: Create a folder for storing compressed pictures
+    private func creatImagesFileFolder(images:[NSImage]) {
+        let documentsDirectory = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
+        let nowDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "yyyy-MM-dd HH-mm-ss"
+        let currentDate = dateFormatter.string(from: nowDate)
+        let dataPath = documentsDirectory.appendingPathComponent("SKimages " + currentDate)
+        do {
+            try FileManager.default.createDirectory(atPath: dataPath.path, withIntermediateDirectories: true, attributes: nil)
+            self.creatCompressedImageFile(prefix: "SKimages " + currentDate, image: images.first!)
+        } catch let error as NSError {
+            printLog(error.description)
+        }
+    }
+    
+    // MARK: Create a compressed picture
+    private func creatCompressedImageFile(prefix:String, image:NSImage) {
+        let documentsDirectory = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
+        let dataPath = documentsDirectory.appendingPathComponent(prefix + "/compressedImage.jpeg")
+        let imageData = image.tiffRepresentation(using: NSBitmapImageRep.TIFFCompression.jpeg, factor: 0.3)
+        FileManager.default.createFile(atPath: dataPath.path, contents: imageData, attributes: nil)
+    }
+}
+
+extension NSBitmapImageRep {
+    var png: Data? {
+        return representation(using: .png, properties: [:])
+    }
+}
+extension Data {
+    var bitmap: NSBitmapImageRep? {
+        return NSBitmapImageRep(data: self)
+    }
+}
+extension NSImage {
+    var png: Data? {
+        return tiffRepresentation?.bitmap?.png
+    }
+    func savePNG(to url: URL) -> Bool {
+        do {
+            try png?.write(to: url)
+            return true
+        } catch {
+            print(error)
+            return false
+        }
+        
     }
 }
