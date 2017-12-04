@@ -41,7 +41,7 @@ extension SKMainInterfaceViewController {
         self.view.layer?.backgroundColor = NSColor(red: 52/255.0, green: 52/255.0, blue: 52/255.0, alpha: 1.0).cgColor
         
         // Setting default animation
-        animationManage.startGIFAnimation(imageView: animationImageView, isDecompression: false)
+        animationManage.startGIFAnimation(imageView: animationImageView, isDecompression: false, completion: nil)
     }
     
     // MARK: Setting mouse related events

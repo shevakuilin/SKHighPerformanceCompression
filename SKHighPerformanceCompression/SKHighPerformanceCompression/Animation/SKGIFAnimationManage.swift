@@ -31,7 +31,7 @@ class SKGIFAnimationManage: NSObject {
     }
     
     // Display animation according to status
-    public func startGIFAnimation(imageView:NSImageView, isDecompression:Bool) {
+    public func startGIFAnimation(imageView:NSImageView, isDecompression:Bool, completion:(()->())?) {
         if isCancle {
             isCancle = false
         }
@@ -56,11 +56,11 @@ class SKGIFAnimationManage: NSObject {
             }
         }
 
-        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:isDecompression)
+        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:isDecompression, completion: completion)
     }
     
     // Ready to start compression
-    public func readyToStartCompressionGIFAnimation(imageView:NSImageView) {
+    public func readyToStartCompressionGIFAnimation(imageView:NSImageView, completion:(()->())?) {
         if isCancle {
             isCancle = false
         }
@@ -73,11 +73,11 @@ class SKGIFAnimationManage: NSObject {
             pictureFrames.append(image!)
         }
 
-        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:true)
+        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:true, completion: completion)
     }
     
     // Cancel compression
-    public func cancelCompressionGIFAnimation(imageView:NSImageView) {
+    public func cancelCompressionGIFAnimation(imageView:NSImageView, completion:(()->())?) {
         isCancle = true
         var pictureFrames:Array<NSImage> = []
         let picturePrefix = defaultGIFPrefix
@@ -88,11 +88,11 @@ class SKGIFAnimationManage: NSObject {
             pictureFrames.append(image!)
         }
 
-        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:false)
+        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:false, completion: completion)
     }
     
     // Making GIF animation effects
-    private func makeGIFAnimation(images:Array<NSImage>, imageView:NSImageView, isDecompression:Bool) {
+    private func makeGIFAnimation(images:Array<NSImage>, imageView:NSImageView, isDecompression:Bool, completion:(()->())?) {
         weak var weakSelf = self
         guard let wSelf = weakSelf else {
             return
@@ -116,12 +116,18 @@ class SKGIFAnimationManage: NSObject {
                         if index == 0 {
                             wSelf.stopGIFAnimation()
                             printLog("The last default frame diagram is:" + "\(image.name()!.rawValue)")
+                            if let isCompletion = completion {
+                                isCompletion()
+                            }
                         }
 
                     } else {
                         if index == 0 {
                             wSelf.stopGIFAnimation()
                             printLog("The last bit of the compressed frame graph is:" + "\(image.name()!.rawValue)")
+                            if let isCompletion = completion {
+                                isCompletion()
+                            }
                         }
                     }
                 }
