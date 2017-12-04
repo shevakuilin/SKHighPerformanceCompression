@@ -77,10 +77,9 @@ extension SKDraftingImageView {
                 animationManage.stopGIFAnimation()
                 animationManage.startGIFAnimation(imageView: self, isDecompression: true, completion: {() in
                     printLog("compress is completion !!")
-                    let canRead = pBoard.canReadObject(forClasses: [NSImage.classForCoder()], options: Dictionary())
-                    if canRead {
-                        let boardArr = pBoard.readObjects(forClasses: [NSImage.classForCoder()], options: Dictionary())
-                        if let image:NSImage = boardArr?.first as? NSImage {
+                    let path = (pBoard.propertyList(forType: NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")) as? NSArray)?.firstObject
+                    if let thePath = path {
+                        if let image:NSImage = NSImage.init(contentsOfFile: thePath as! String) {
                             wSelf.creatImagesFileFolder(images: [image])
                         }
                     }
