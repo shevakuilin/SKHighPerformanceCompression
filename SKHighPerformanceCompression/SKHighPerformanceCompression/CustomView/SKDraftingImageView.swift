@@ -112,8 +112,11 @@ extension SKDraftingImageView {
     private func creatCompressedImageFile(prefix:String, image:NSImage) {
         let documentsDirectory = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
         let dataPath = documentsDirectory.appendingPathComponent(prefix + "/compressedImage.jpeg")
-        let imageData = image.tiffRepresentation(using: NSBitmapImageRep.TIFFCompression.jpeg, factor: 0.3)
-        FileManager.default.createFile(atPath: dataPath.path, contents: imageData, attributes: nil)
+        if var imageData = image.tiffRepresentation {
+            let imageRep = NSBitmapImageRep.imageReps(with: imageData)
+            imageData = NSBitmapImageRep.representationOfImageReps(in: imageRep, using: NSBitmapImageRep.FileType.jpeg, properties: [NSBitmapImageRep.PropertyKey.compressionFactor : 0.1])!
+            try? imageData.write(to: dataPath)
+        }
     }
 }
 
