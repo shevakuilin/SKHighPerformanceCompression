@@ -80,7 +80,10 @@ extension SKDraftingImageView {
                     let path = (pBoard.propertyList(forType: NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")) as? NSArray)?.firstObject
                     if let thePath = path {
                         if let image:NSImage = NSImage.init(contentsOfFile: thePath as! String) {
-                            wSelf.creatImagesFileFolder(images: [image])
+                            let pathStr = thePath as! String
+                            let pathArr:Array<String> = pathStr.components(separatedBy: "/")
+                            let suffix:String = pathArr.last ?? ""
+                            wSelf.creatImagesFileFolder(images: [image], imageNames: [suffix])
                         }
                     }
                 })
@@ -92,7 +95,7 @@ extension SKDraftingImageView {
     }
     
     // MARK: Create a folder for storing compressed pictures
-    private func creatImagesFileFolder(images:[NSImage]) {
+    private func creatImagesFileFolder(images:[NSImage], imageNames:[String]) {
         let documentsDirectory = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
         let nowDate = Date()
         let dateFormatter = DateFormatter()
@@ -102,16 +105,16 @@ extension SKDraftingImageView {
         let dataPath = documentsDirectory.appendingPathComponent("SKimages " + currentDate)
         do {
             try FileManager.default.createDirectory(atPath: dataPath.path, withIntermediateDirectories: true, attributes: nil)
-            self.creatCompressedImageFile(prefix: "SKimages " + currentDate, image: images.first!)
+            self.creatCompressedImageFile(prefix: "SKimages " + currentDate, image: images.first!, imageName: imageNames.first!)
         } catch let error as NSError {
             printLog(error.description)
         }
     }
     
     // MARK: Create a compressed picture
-    private func creatCompressedImageFile(prefix:String, image:NSImage) {
+    private func creatCompressedImageFile(prefix:String, image:NSImage, imageName:String) {
         let documentsDirectory = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
-        let dataPath = documentsDirectory.appendingPathComponent(prefix + "/compressedImage.jpeg")
+        let dataPath = documentsDirectory.appendingPathComponent(prefix + "/" + imageName)
         if var imageData = image.tiffRepresentation {
             let imageRep = NSBitmapImageRep.imageReps(with: imageData)
             imageData = NSBitmapImageRep.representationOfImageReps(in: imageRep, using: NSBitmapImageRep.FileType.jpeg, properties: [NSBitmapImageRep.PropertyKey.compressionFactor : 0.1])!
