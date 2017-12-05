@@ -21,6 +21,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    // Click the close button to minimize the application and open again, not to close it directly.
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        let window = sender.windows.first
+        window?.makeKeyAndOrderFront(nil)
+        
+        return true
+    }
 
 }
 
