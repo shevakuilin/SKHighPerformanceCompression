@@ -10,7 +10,7 @@
 
 import Cocoa
 
-class SKDraftingImageView: NSImageView {
+class SKDraftingView: NSView {
 
     private var isDragIn:Bool = false
     private var animationManage = SKGIFAnimationManage.sharedInstance()
@@ -32,7 +32,7 @@ class SKDraftingImageView: NSImageView {
     
 }
 
-extension SKDraftingImageView {
+extension SKDraftingView {
     
     // MARK: Destination Operations
     
@@ -41,7 +41,7 @@ extension SKDraftingImageView {
         // TODO: add GIF animation
         printLog("The file begins dragging in")
         animationManage.stopGIFAnimation()
-        animationManage.readyToStartCompressionGIFAnimation(imageView: self, completion: {() in
+        animationManage.readyToStartCompressionGIFAnimation(imageView: nil, completion: {() in
             
         })
 
@@ -53,7 +53,7 @@ extension SKDraftingImageView {
         // TODO: add GIF animation
         print("The file starts dragging away")
         animationManage.stopGIFAnimation()
-        animationManage.cancelCompressionGIFAnimation(imageView: self, completion: {() in
+        animationManage.cancelCompressionGIFAnimation(imageView: nil, completion: {() in
             
         })
     }
@@ -75,7 +75,7 @@ extension SKDraftingImageView {
                     return false
                 }
                 animationManage.stopGIFAnimation()
-                animationManage.startGIFAnimation(imageView: self, isDecompression: true, completion: {() in
+                animationManage.startGIFAnimation(imageView: nil, isDecompression: true, completion: {() in
                     printLog("compress is completion !!")
                     let path = (pBoard.propertyList(forType: NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")) as? NSArray)?.firstObject
                     if let thePath = path {

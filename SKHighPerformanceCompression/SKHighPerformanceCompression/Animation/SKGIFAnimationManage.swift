@@ -17,6 +17,7 @@ class SKGIFAnimationManage: NSObject {
     private let decompressionGIFPrefix = "Hover+compress+gift+relax_"
     private let defaultGIFPrefix = "animationIn+hover+relax_"
     private var isCancle:Bool = false
+    private var gifImageView:NSImageView?
     
     // Create a single instance
     class func sharedInstance() -> SKGIFAnimationManage {
@@ -31,9 +32,12 @@ class SKGIFAnimationManage: NSObject {
     }
     
     // Display animation according to status
-    public func startGIFAnimation(imageView:NSImageView, isDecompression:Bool, completion:(()->())?) {
+    public func startGIFAnimation(imageView:NSImageView?, isDecompression:Bool, completion:(()->())?) {
         if isCancle {
             isCancle = false
+        }
+        if gifImageView == nil {
+            gifImageView = imageView
         }
         // Read animation pictures
         var pictureFrames:Array<NSImage> = []
@@ -56,11 +60,11 @@ class SKGIFAnimationManage: NSObject {
             }
         }
 
-        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:isDecompression, completion: completion)
+        makeGIFAnimation(images: pictureFrames, imageView: imageView ?? gifImageView!, isDecompression:isDecompression, completion: completion)
     }
     
     // Ready to start compression
-    public func readyToStartCompressionGIFAnimation(imageView:NSImageView, completion:(()->())?) {
+    public func readyToStartCompressionGIFAnimation(imageView:NSImageView?, completion:(()->())?) {
         if isCancle {
             isCancle = false
         }
@@ -73,11 +77,11 @@ class SKGIFAnimationManage: NSObject {
             pictureFrames.append(image!)
         }
 
-        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:true, completion: completion)
+        makeGIFAnimation(images: pictureFrames, imageView: imageView ?? gifImageView!, isDecompression:true, completion: completion)
     }
     
     // Cancel compression
-    public func cancelCompressionGIFAnimation(imageView:NSImageView, completion:(()->())?) {
+    public func cancelCompressionGIFAnimation(imageView:NSImageView?, completion:(()->())?) {
         isCancle = true
         var pictureFrames:Array<NSImage> = []
         let picturePrefix = defaultGIFPrefix
@@ -88,7 +92,7 @@ class SKGIFAnimationManage: NSObject {
             pictureFrames.append(image!)
         }
 
-        makeGIFAnimation(images: pictureFrames, imageView: imageView, isDecompression:false, completion: completion)
+        makeGIFAnimation(images: pictureFrames, imageView: imageView ?? gifImageView!, isDecompression:false, completion: completion)
     }
     
     // Making GIF animation effects

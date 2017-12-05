@@ -16,8 +16,8 @@ class SKMainInterfaceViewController: NSViewController {
     @IBOutlet weak var settingButton: NSButton!
     @IBOutlet weak var reminderInfoLabel: NSTextField!
     @IBOutlet weak var applicationTitleLabel: NSTextField!
-    @IBOutlet weak var animationImageView: SKDraftingImageView!
-    @IBOutlet weak var maskView: NSView!
+    @IBOutlet weak var animationImageView: NSImageView!
+    @IBOutlet weak var maskView: SKDraftingView!
     
     private var animationManage = SKGIFAnimationManage.sharedInstance()
     

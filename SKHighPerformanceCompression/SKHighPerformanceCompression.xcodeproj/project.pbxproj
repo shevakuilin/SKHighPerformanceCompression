@@ -15,7 +15,7 @@
 		9F98CE871FBEBBE100551365 /* SKMainInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE861FBEBBE100551365 /* SKMainInterfaceViewController.swift */; };
 		9FBAA2BE1FC3C2D500420AD0 /* SKGlobalFormattingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAA2BD1FC3C2D500420AD0 /* SKGlobalFormattingTool.swift */; };
 		9FCD84D01FC166E9006E6776 /* SKGIFAnimationManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD84CF1FC166E9006E6776 /* SKGIFAnimationManage.swift */; };
-		9FCD84D31FC26DEE006E6776 /* SKDraftingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD84D21FC26DEE006E6776 /* SKDraftingImageView.swift */; };
+		9FCD84D31FC26DEE006E6776 /* SKDraftingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD84D21FC26DEE006E6776 /* SKDraftingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		9F98CE861FBEBBE100551365 /* SKMainInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKMainInterfaceViewController.swift; sourceTree = "<group>"; };
 		9FBAA2BD1FC3C2D500420AD0 /* SKGlobalFormattingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKGlobalFormattingTool.swift; sourceTree = "<group>"; };
 		9FCD84CF1FC166E9006E6776 /* SKGIFAnimationManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKGIFAnimationManage.swift; sourceTree = "<group>"; };
-		9FCD84D21FC26DEE006E6776 /* SKDraftingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKDraftingImageView.swift; sourceTree = "<group>"; };
+		9FCD84D21FC26DEE006E6776 /* SKDraftingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKDraftingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +200,7 @@
 		9FCD84D11FC26DAA006E6776 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				9FCD84D21FC26DEE006E6776 /* SKDraftingImageView.swift */,
+				9FCD84D21FC26DEE006E6776 /* SKDraftingView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 				9F98CE551FBEB4F400551365 /* AppDelegate.swift in Sources */,
 				9FCD84D01FC166E9006E6776 /* SKGIFAnimationManage.swift in Sources */,
 				9F98CE871FBEBBE100551365 /* SKMainInterfaceViewController.swift in Sources */,
-				9FCD84D31FC26DEE006E6776 /* SKDraftingImageView.swift in Sources */,
+				9FCD84D31FC26DEE006E6776 /* SKDraftingView.swift in Sources */,
 				9FBAA2BE1FC3C2D500420AD0 /* SKGlobalFormattingTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

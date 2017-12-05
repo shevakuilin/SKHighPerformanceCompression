@@ -745,7 +745,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0VA-sl-BaB" customClass="SKDraftingImageView" customModule="SKHighPerformanceCompression" customModuleProvider="target">
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0VA-sl-BaB">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="410"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="410" id="7lj-fe-KKm"/>
@@ -753,6 +753,9 @@
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="animationIn+hover+relax_00039" id="1ld-ov-ghl"/>
                                     </imageView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Sac-LS-JHf" customClass="SKDraftingView" customModule="SKHighPerformanceCompression" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="410"/>
+                                    </customView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="0VA-sl-BaB" firstAttribute="top" secondItem="dfD-2k-n6z" secondAttribute="top" id="05o-db-Osa"/>
@@ -760,11 +763,16 @@
                                     <constraint firstItem="aI1-3H-Jl6" firstAttribute="centerX" secondItem="dfD-2k-n6z" secondAttribute="centerX" id="1Bj-bk-ksg"/>
                                     <constraint firstItem="25h-wA-hBa" firstAttribute="leading" secondItem="dfD-2k-n6z" secondAttribute="leading" constant="10" id="3xP-Ky-qcC"/>
                                     <constraint firstItem="0VA-sl-BaB" firstAttribute="leading" secondItem="dfD-2k-n6z" secondAttribute="leading" id="6Bh-8z-7IZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sac-LS-JHf" secondAttribute="trailing" id="EL9-Fn-pvp"/>
+                                    <constraint firstItem="Sac-LS-JHf" firstAttribute="leading" secondItem="dfD-2k-n6z" secondAttribute="leading" id="KOq-Qk-wvk"/>
                                     <constraint firstAttribute="trailing" secondItem="0VA-sl-BaB" secondAttribute="trailing" id="PG2-Xa-UEu"/>
                                     <constraint firstAttribute="bottom" secondItem="aI1-3H-Jl6" secondAttribute="bottom" constant="20" id="SfR-pu-BoO"/>
+                                    <constraint firstItem="Sac-LS-JHf" firstAttribute="width" secondItem="dfD-2k-n6z" secondAttribute="width" id="Znh-vv-8NV"/>
                                     <constraint firstAttribute="bottom" secondItem="25h-wA-hBa" secondAttribute="bottom" constant="11" id="csP-ls-G3N"/>
                                     <constraint firstItem="76R-E9-DJA" firstAttribute="top" secondItem="dfD-2k-n6z" secondAttribute="top" constant="49" id="nHY-BX-tcN"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="375" id="rbG-WG-DlF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sac-LS-JHf" secondAttribute="bottom" id="ukQ-9U-nvf"/>
+                                    <constraint firstItem="Sac-LS-JHf" firstAttribute="top" secondItem="dfD-2k-n6z" secondAttribute="top" id="voY-Uh-tlI"/>
                                     <constraint firstAttribute="bottom" secondItem="0VA-sl-BaB" secondAttribute="bottom" id="xHD-SB-Wtr"/>
                                 </constraints>
                             </customView>
@@ -777,9 +785,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animationImageView" destination="0VA-sl-BaB" id="zjR-S0-chi"/>
+                        <outlet property="animationImageView" destination="0VA-sl-BaB" id="024-x8-SvX"/>
                         <outlet property="applicationTitleLabel" destination="76R-E9-DJA" id="eAw-YH-Y1W"/>
-                        <outlet property="maskView" destination="dfD-2k-n6z" id="0Vc-ys-eqV"/>
+                        <outlet property="maskView" destination="Sac-LS-JHf" id="BzG-O5-9kL"/>
                         <outlet property="reminderInfoLabel" destination="aI1-3H-Jl6" id="5wL-gE-Z0E"/>
                         <outlet property="settingButton" destination="25h-wA-hBa" id="PKa-MO-Dlu"/>
                     </connections>
