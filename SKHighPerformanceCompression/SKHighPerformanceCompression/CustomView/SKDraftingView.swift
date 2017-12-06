@@ -115,11 +115,32 @@ extension SKDraftingView {
     private func creatCompressedImageFile(prefix:String, image:NSImage, imageName:String) {
         let documentsDirectory = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
         let dataPath = documentsDirectory.appendingPathComponent(prefix + "/" + imageName)
-        if var imageData = image.tiffRepresentation {
-            let imageRep = NSBitmapImageRep.imageReps(with: imageData)
-            imageData = NSBitmapImageRep.representationOfImageReps(in: imageRep, using: NSBitmapImageRep.FileType.jpeg, properties: [NSBitmapImageRep.PropertyKey.compressionFactor : 0.1])!
-            try? imageData.write(to: dataPath)
-        }
+//        if var imageData = image.tiffRepresentation {
+//            let imageRep = NSBitmapImageRep.imageReps(with: imageData)
+//            imageData = NSBitmapImageRep.representationOfImageReps(in: imageRep, using: NSBitmapImageRep.FileType.jpeg, properties: [NSBitmapImageRep.PropertyKey.compressionFactor : 0.3])!
+//            try? imageData.write(to: dataPath)
+            var currentFrames:[GIFFrame] = []
+            var frameCount:Int = 0
+            let rep = image.representations.first!
+            if rep .isKind(of: NSBitmapImageRep.classForCoder()) {
+                let bitmapRep = rep as! NSBitmapImageRep
+                frameCount = bitmapRep.value(forProperty: .frameCount) as! Int
+                for i in 0..<frameCount {
+                    bitmapRep.setProperty(.currentFrame, withValue: i)
+                    let frameImageData = bitmapRep.tiffRepresentation(using: .jpeg, factor: 0.1)!//bitmapRep.representation(using: .tiff, properties: [NSBitmapImageRep.PropertyKey.compressionFactor : 0.1])!
+                    let frameImage = NSImage(data: frameImageData)!
+                    let gifFrame = GIFFrame(image: frameImage)
+                    currentFrames.append(gifFrame)
+                }
+
+                GIFHandler.createAndSaveGIF(with: currentFrames, savePath: dataPath)
+//                let gifImage = GIFHandler.createGIF(with: validate.gif.frames, loops: validate.gif.loops)!
+//                var imageData = gifImage.tiffRepresentation!
+//                let imageRep = NSBitmapImageRep.imageReps(with: imageData)
+//                imageData = NSBitmapImageRep.representationOfImageReps(in: imageRep, using: .gif, properties: [NSBitmapImageRep.PropertyKey.currentFrame : frameCount])!
+//                try? imageData.write(to: dataPath)
+            }
+//        }
     }
 }
 

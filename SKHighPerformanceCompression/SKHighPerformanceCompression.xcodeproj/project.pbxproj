@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1CEEE81FD7D2EE006C10EE /* GIFFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CEEE61FD7D2EE006C10EE /* GIFFrame.swift */; };
+		9F1CEEE91FD7D2EE006C10EE /* GIFHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CEEE71FD7D2EE006C10EE /* GIFHandler.swift */; };
 		9F98CE551FBEB4F400551365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98CE541FBEB4F400551365 /* AppDelegate.swift */; };
 		9F98CE591FBEB4F400551365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F98CE581FBEB4F400551365 /* Assets.xcassets */; };
 		9F98CE5C1FBEB4F400551365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F98CE5A1FBEB4F400551365 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F1CEEE61FD7D2EE006C10EE /* GIFFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFFrame.swift; sourceTree = "<group>"; };
+		9F1CEEE71FD7D2EE006C10EE /* GIFHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFHandler.swift; sourceTree = "<group>"; };
 		9F98CE511FBEB4F400551365 /* SKHighPerformanceCompression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKHighPerformanceCompression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F98CE541FBEB4F400551365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F98CE581FBEB4F400551365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F1CEEE51FD7D2D2006C10EE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CEEE61FD7D2EE006C10EE /* GIFFrame.swift */,
+				9F1CEEE71FD7D2EE006C10EE /* GIFHandler.swift */,
+			);
+			name = Util;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		9F98CE481FBEB4F400551365 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +116,7 @@
 		9F98CE531FBEB4F400551365 /* SKHighPerformanceCompression */ = {
 			isa = PBXGroup;
 			children = (
+				9F1CEEE51FD7D2D2006C10EE /* Util */,
 				9FBAA2BA1FC3C0A300420AD0 /* GlobalFormattingTool */,
 				9FCD84D11FC26DAA006E6776 /* CustomView */,
 				9FCD84CE1FC16681006E6776 /* Animation */,
@@ -346,6 +361,8 @@
 			files = (
 				9F98CE551FBEB4F400551365 /* AppDelegate.swift in Sources */,
 				9FCD84D01FC166E9006E6776 /* SKGIFAnimationManage.swift in Sources */,
+				9F1CEEE81FD7D2EE006C10EE /* GIFFrame.swift in Sources */,
+				9F1CEEE91FD7D2EE006C10EE /* GIFHandler.swift in Sources */,
 				9F98CE871FBEBBE100551365 /* SKMainInterfaceViewController.swift in Sources */,
 				9FCD84D31FC26DEE006E6776 /* SKDraftingView.swift in Sources */,
 				9FBAA2BE1FC3C2D500420AD0 /* SKGlobalFormattingTool.swift in Sources */,
